@@ -15,10 +15,25 @@ class Estrutura_bonecoOlaf:
         glRotatef(90, 1, 0, 0)
         glTranslatef(0, 0, -1)
         glutSolidCone(.2, .7, 60, 100)
-        glRotatef(-90, 1, 0, 0)
-        glTranslatef(0, 0.05, 0)
-        glutSolidSphere(0.21, 20, 20)
-        glPopMatrix()
+        #cabelo
+	quadratic = gluNewQuadric()
+	glColor3f(0.7, 0.4, 0.4)
+	glRotatef(-90, 1, 0, 0)
+	glRotatef(-90, 0, 0, 1)
+	gluCylinder(quadratic, 0.01, 0.01, 0.25, 60, 60)
+	glTranslatef(0, 0, 0.25)
+	glRotatef(20, 1, 0, 0)
+	gluCylinder(quadratic, 0.01, 0.01, 0.25, 60, 60)
+	glRotatef(-40, 1, 0, 0)
+	gluCylinder(quadratic, 0.01, 0.01, 0.05, 60, 60)
+
+	glRotatef(20, 1, 0, 0)
+	glTranslatef(0.01, 0.055, -0.25)
+	glRotatef(20, 1, 0, 0)
+	gluCylinder(quadratic, 0.01, 0.01, 0.25, 60, 60)
+	glTranslatef(0, 0, 0.25)
+	glRotatef(10, 1, 0, 0)
+	gluCylinder(quadratic, 0.01, 0.01, 0.1, 60, 60)
         
     def desenhar_olho(self):
         #desenhar olhos
